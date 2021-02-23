@@ -1,0 +1,11 @@
+html
+  head
+    title= title
+    style
+      include ./css/index.css
+    script(type='text/javascript' src=buttonScript)
+  body
+    h3= message
+    p= roomInfo
+    br
+    button(onclick='sendDisconnectRequest()') disconnect

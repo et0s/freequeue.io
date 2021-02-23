@@ -1,0 +1,15 @@
+html
+  head
+    title= title
+    link(rel='icon' href='favicon.ico' type='image/x-icon')
+    link(rel='shortcut icon' href='favicon.ico' type='image/x-icon')
+    style
+      include ./css/index.css
+    script(type='text/javascript' src=buttonScript)
+  body
+    h3= message
+    p= roomInfo
+    br
+    button(onclick='sendHostRequest()') host
+    .divider
+    button(onclick='sendJoinRequest()') join

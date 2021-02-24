@@ -5,7 +5,7 @@ const express = require('express');
 const SpotifyWebApi = require('spotify-web-api-node');
 const app = express();
 
-app.locals.ipv4         = 'localhost';
+app.locals.ipv4         = 'freequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com';
 app.locals.port         = 80;
 app.locals.title        = 'freequeue.io';
 app.locals.email        = 'etas1337@gmail.com';
@@ -57,7 +57,7 @@ app.get('/join', (req, res) => {
     var spotifyApi = new SpotifyWebApi({
       clientId: app.locals.clientId,
       clientSecret: app.locals.clientSecret,
-      redirectUri: 'http://localhost:80/join'
+      redirectUri: 'http://freequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com/join'
     });
     spotifyApi.authorizationCodeGrant(req.query.code)
     .then(data => {
@@ -111,7 +111,7 @@ app.get('/host', (req, res) => {
     var spotifyApi = new SpotifyWebApi({
       clientId: app.locals.clientId,
       clientSecret: app.locals.clientSecret,
-      redirectUri: 'http://localhost:80/host'
+      redirectUri: 'http://freequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com/host'
     });
     spotifyApi.authorizationCodeGrant(req.query.code)
     .then(data => {

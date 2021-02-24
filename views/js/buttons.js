@@ -25,7 +25,7 @@ function sendJoinRequest(){
 function appRequestAuthentication(scopes, callback){
     const client_id = 'client_id=' + '6c0929ae3d99478581e117d18635ed1e';
     const response_type = '&response_type=code&';
-    const redirect_uri = '&redirect_uri=' + 'http%3A%2F%2Flocalhost%3A80%2F' + callback;
+    const redirect_uri = '&redirect_uri=' + 'http%3A%2F%2Ffreequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com%2F' + callback;
     const scope = '&scope=' + encodeURIComponent(scopes);
     var accessTokenRequest = 'https://accounts.spotify.com/authorize?' + client_id + response_type + redirect_uri + scope;
     document.location.assign(accessTokenRequest);

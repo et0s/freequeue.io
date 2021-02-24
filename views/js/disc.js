@@ -13,10 +13,10 @@ function sendDisconnectRequest(){
     method: 'POST',
     redirect: 'follow'
     };
-    fetch('http://localhost:80/host?delete', requestOptions)
+    fetch('http://freequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com/host?delete', requestOptions)
     .then(response => {
         if(response.status == 200){
-            document.location.assign('http://localhost:80');
+            document.location.assign('http://freequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com');
         }
     })
     .catch(error => console.log('error', error));

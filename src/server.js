@@ -5,7 +5,7 @@ const express = require('express');
 const SpotifyWebApi = require('spotify-web-api-node');
 const app = express();
 
-app.locals.ipv4         = 'localhost'
+app.locals.ipv4         = 'localhost';
 app.locals.port         = 80;
 app.locals.title        = 'freequeue.io';
 app.locals.email        = 'etas1337@gmail.com';
@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
   res.render('index', {
     title: 'freequeue.io',
     message: 'freequeue.io',
+    roomInfo: 'Host or join a room on spotify',
     buttonScript: 'js/buttons.js'
   }, function (err, html){
     if(err) console.error(req.ip + ' error rendering index.pug');
@@ -83,7 +84,7 @@ app.get('/join', (req, res) => {
       res.render('index', {
         title: 'freequeue.io', 
         message: 'freequeue.io',
-        roomInfo: 'Something went wrong. Please click "join" again.',
+        roomInfo: 'Something went wrong. Please click "join" again',
         buttonScript: 'js/buttons.js'
       }, function (err, html){
         if(err) console.error(req.ip + ' error rendering invalid spotifyApiClient response');
@@ -95,12 +96,12 @@ app.get('/join', (req, res) => {
     res.render('index', {
       title: 'freequeue.io', 
       message: 'freequeue.io',
-      roomInfo: 'There are no rooms avaliable. Click "host" to start one.',
+      roomInfo: 'No host on this network. Click "host" to start one',
       buttonScript: 'js/buttons.js'
     }, function (err, html){
       if(err) console.error(req.ip + ' error rendering no rooms avaliable response');
       res.send(html);
-      res.end(); //serve no rooms avaliable response
+      res.end(); //serve no host avaliable response
     });
   }
 });
@@ -140,7 +141,7 @@ app.get('/host', (req, res) => {
       res.render('index', {
         title: 'freequeue.io', 
         message: 'freequeue.io',
-        roomInfo: 'Something went wrong. Please click "host" again.',
+        roomInfo: 'Something went wrong. Please click "host" again',
         buttonScript: 'js/buttons.js'
       }, function (err, html){
         if(err) console.error(req.ip + ' error rendering invalid spotifyApiClient response');
@@ -152,7 +153,7 @@ app.get('/host', (req, res) => {
     res.render('index', {
       title : 'freequeue.io', 
       message : 'freequeue.io',
-      roomInfo : 'Someone else is hosting on your network.',
+      roomInfo : 'Someone else is hosting on your network',
       buttonScript : 'js/buttons.js',
       freeServerConfig : 'json/config.json',
     }, function (err, html){

@@ -4,8 +4,13 @@ html
     style
       include ./css/index.css
     script(type='text/javascript' src=buttonScript)
+    meta(content='width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no' name='viewport')
   body
-    h3= message
-    p= roomInfo
-    br
-    button(onclick='sendDisconnectRequest()') disconnect
+    .frontbox
+      h3= message
+      p= roomInfo
+      br
+      a.button6(onclick='sendDisconnectRequest()') disconnect
+    .ocean
+      .wave
+      .wave

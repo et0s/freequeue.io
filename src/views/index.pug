@@ -6,10 +6,14 @@ html
     style
       include ./css/index.css
     script(type='text/javascript' src=buttonScript)
+    meta(content='width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no' name='viewport')
   body
-    h3= message
-    p= roomInfo
-    br
-    button(onclick='sendHostRequest()') host
-    .divider
-    button(onclick='sendJoinRequest()') join
+    .frontbox
+      h3= message
+      p= roomInfo
+      br
+      a.button6(onclick='sendHostRequest()') host
+      a.button6(onclick='sendJoinRequest()') join
+    .ocean
+      .wave
+      .wave

@@ -57,7 +57,7 @@ app.get('/join', (req, res) => {
     var spotifyApi = new SpotifyWebApi({
       clientId: app.locals.clientId,
       clientSecret: app.locals.clientSecret,
-      redirectUri: 'http://freequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com/join'
+      redirectUri: app.locals.ipv4 + '/join'
     });
     spotifyApi.authorizationCodeGrant(req.query.code)
     .then(data => {
@@ -111,7 +111,7 @@ app.get('/host', (req, res) => {
     var spotifyApi = new SpotifyWebApi({
       clientId: app.locals.clientId,
       clientSecret: app.locals.clientSecret,
-      redirectUri: 'http://freequeueio-env.eba-s4vk8zkt.us-west-1.elasticbeanstalk.com/host'
+      redirectUri: app.locals.ipv4 + '/host'
     });
     spotifyApi.authorizationCodeGrant(req.query.code)
     .then(data => {
@@ -175,9 +175,7 @@ app.post('/host', (req, res) => {
   }
 });
 
-app.listen(app.locals.port, app.locals.ipv4, () => {
-  console.log('App listening at http://' + app.locals.ipv4 + ':' + app.locals.port);
-});
+app.listen(app.locals.port);
 
 function hostExists(ip){
   for(var i = 0; i < userRooms.length; i++){

@@ -3,7 +3,7 @@
 2. Run the freequeue.io web server type `node server.js` inside the `src` directory
 ```
 └── src
-    └── server.js   <- run me
-    └── secret.key  <- set me
-    └── views
+└── server.js   <- run me
+└── secret.key  <- set me
+└── views
 ```
